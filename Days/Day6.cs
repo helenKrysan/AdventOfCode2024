@@ -1,5 +1,4 @@
 ﻿using AdventOfCode2024.Utils;
-using System;
 
 namespace AdventOfCode2024.Days
 {

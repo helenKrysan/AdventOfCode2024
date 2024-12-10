@@ -5,9 +5,9 @@ namespace AdventOfCode2024.Days
 {
     internal class Day3 : IDay<int>
     {
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            var input = ReadFileUtils.ReadFile(3);
+            var input = await ReadFileUtils.ReadFileAsync(3);
             var pattern = "mul\\(\\d*\\,\\d*\\)";
             var sum = 0;
             var matches = Regex.Matches(input[0], pattern).Select(result => result.Value);
@@ -19,9 +19,9 @@ namespace AdventOfCode2024.Days
             return sum;
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            var input = ReadFileUtils.ReadFile(3);
+            var input = await ReadFileUtils.ReadFileAsync(3);
             var pattern = "mul\\(\\d*\\,\\d*\\)";
             var preprocessed = PreprocessDo(input[0]);
             var sum = 0;

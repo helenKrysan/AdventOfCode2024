@@ -7,10 +7,10 @@ namespace AdventOfCode2024.Days
         private List<List<int>> _map = new List<List<int>>();
         private Dictionary<int, List<(int, int)>> _positions = new Dictionary<int, List<(int, int)>>();
 
-        public int Solve<T>() where T : ICollection<int>, IEnumerable<int>
+        public async Task<int> Solve<T>() where T : ICollection<int>, IEnumerable<int>
         {
             List<List<T>> scores = new List<List<T>>();
-            ReadInput(scores);
+            await ReadInput(scores);
             var id = 0;
             foreach (var nine in _positions[9])
             {
@@ -56,19 +56,19 @@ namespace AdventOfCode2024.Days
             return _positions[0].Sum(zero => scores[zero.Item1][zero.Item2].Count);
         }
 
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            return Solve<HashSet<int>>();
+            return await Solve<HashSet<int>>();
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            return Solve<List<int>>();
+            return await Solve<List<int>>();
         }
 
-        public void ReadInput<T>(List<List<T>> scores) where T : ICollection<int>, IEnumerable<int>
+        public async Task ReadInput<T>(List<List<T>> scores) where T : ICollection<int>, IEnumerable<int>
         {
-            var input = ReadFileUtils.ReadFile(10);
+            var input = await ReadFileUtils.ReadFileAsync(10);
             _map = new List<List<int>>();
             _positions = new Dictionary<int, List<(int, int)>>();
             var _lineNumber = 0;

@@ -4,9 +4,9 @@ namespace AdventOfCode2024.Days
 {
     internal class Day1 : IDay<int>
     {
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            var input = ReadFileUtils.ReadFile(1);
+            var input = await ReadFileUtils.ReadFileAsync(1);
 
             var first = new List<int>();
             var second = new List<int>();
@@ -29,9 +29,9 @@ namespace AdventOfCode2024.Days
             return distances.Sum();
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            var input = ReadFileUtils.ReadFile(1);
+            var input = await ReadFileUtils.ReadFileAsync(1);
 
             var first = new List<int>();
             var second = new List<int>();

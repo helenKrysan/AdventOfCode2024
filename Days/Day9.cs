@@ -5,9 +5,9 @@ namespace AdventOfCode2024.Days
     internal class Day9 : IDay<long>
     {
         private string _diskMap;
-        public long SolvePart1()
+        public async Task<long> SolvePart1Async()
         {
-            ReadInput();
+            await ReadInput();
             var sum = 0L;
             var blockWithSpaces = new List<int>();
             var isFreeSpace = false;
@@ -53,9 +53,9 @@ namespace AdventOfCode2024.Days
             return sum;
         }
 
-        public long SolvePart2()
+        public async Task<long> SolvePart2Async()
         {
-            ReadInput();
+            await ReadInput();
             var sum = 0L;
             var blockWithSpaces = new List<int>();
             var isFreeSpace = false;
@@ -134,9 +134,9 @@ namespace AdventOfCode2024.Days
             return sum;
         }
 
-        private void ReadInput()
+        private async Task ReadInput()
         {
-            var input = ReadFileUtils.ReadFile(9);
+            var input = await ReadFileUtils.ReadFileAsync(9);
             _diskMap = input[0];
         }
     }

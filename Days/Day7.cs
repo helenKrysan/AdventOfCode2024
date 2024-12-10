@@ -5,9 +5,9 @@ namespace AdventOfCode2024.Days
     internal class Day7 : IDay<long>
     {
         Dictionary<long, List<long>> _equations;
-        public long SolvePart1()
+        public async Task<long> SolvePart1Async()
         {
-            ReadInput();
+            await ReadInput();
             var sum = 0L;
             foreach (var equation in _equations)
             {
@@ -46,9 +46,9 @@ namespace AdventOfCode2024.Days
             return false;
         }
 
-        public long SolvePart2()
+        public async Task<long> SolvePart2Async()
         {
-            ReadInput();
+            await ReadInput();
             var sum = 0L;
             foreach (var equation in _equations)
             {
@@ -61,9 +61,9 @@ namespace AdventOfCode2024.Days
             return sum;
         }
 
-        private void ReadInput()
+        private async Task ReadInput()
         {
-            var input = ReadFileUtils.ReadFile(7);
+            var input = await ReadFileUtils.ReadFileAsync(7);
             _equations = new Dictionary<long, List<long>>();
             foreach (var line in input)
             {

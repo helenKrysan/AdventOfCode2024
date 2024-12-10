@@ -30,9 +30,9 @@ namespace AdventOfCode2024.Days
     {
         Dictionary<int, List<int>> rules = new Dictionary<int, List<int>>();
         List<List<int>> pages = new List<List<int>>();
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            ReadInput();
+            await ReadInput();
             var result = 0;
             foreach (var page in pages)
             {
@@ -42,11 +42,11 @@ namespace AdventOfCode2024.Days
                 }
             }
             return result;
-        }    
+        }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            ReadInput();
+            await ReadInput();
             var result = 0;
             foreach (var page in pages)
             {
@@ -80,9 +80,9 @@ namespace AdventOfCode2024.Days
             return true;
         }
 
-        private void ReadInput()
+        private async Task ReadInput()
         {
-            var input = ReadFileUtils.ReadFile(5);
+            var input = await ReadFileUtils.ReadFileAsync(5);
             rules = new Dictionary<int, List<int>>();
             pages = new List<List<int>>();
             var mode = 0;

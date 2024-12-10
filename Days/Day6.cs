@@ -18,9 +18,9 @@ namespace AdventOfCode2024.Days
     internal class Day6 : IDay<int>
     {
         private List<List<char>> _map = new List<List<char>>();
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            var guard = ReadInput();
+            var guard = await ReadInput();
             while (true)
             {
                 _map[guard.Y][guard.X] = 'X';
@@ -108,9 +108,9 @@ namespace AdventOfCode2024.Days
             return true;
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            var guard = ReadInput();
+            var guard = await ReadInput();
             var count = 0;
             var uniqueObstacle = new HashSet<(int, int)>();
             while (true)
@@ -182,9 +182,9 @@ namespace AdventOfCode2024.Days
                 { '>', Direction.Right }
             };
 
-        private Guard ReadInput()
+        private async Task<Guard> ReadInput()
         {
-            var input = ReadFileUtils.ReadFile(6);
+            var input = await ReadFileUtils.ReadFileAsync(6);
             _map = new List<List<char>>();
             var guard = new Guard() { };
             foreach (var line in input)

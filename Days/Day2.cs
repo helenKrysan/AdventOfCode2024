@@ -4,9 +4,9 @@ namespace AdventOfCode2024.Days
 {
     internal class Day2 : IDay<int>
     {
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            var input = ReadFileUtils.ReadFile(2);
+            var input = await ReadFileUtils.ReadFileAsync(2);
 
             var safeCount = 0;
             foreach (var line in input)
@@ -30,9 +30,9 @@ namespace AdventOfCode2024.Days
             return safeCount;
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            var input = ReadFileUtils.ReadFile(2);  
+            var input = await ReadFileUtils.ReadFileAsync(2);
             var safeCount = 0;
             foreach (var line in input)
             {

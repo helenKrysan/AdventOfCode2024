@@ -7,9 +7,9 @@ namespace AdventOfCode2024.Days
         private Dictionary<char, List<(int,int)>> _antennaLocations = new Dictionary<char, List<(int,int)>>();
         private int _maxY = 0;
         private int _maxX = 0;
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            ReadInput();
+            await ReadInput();
             var antinodeLocations = new HashSet<(int,int)>();
             foreach (var antenna in _antennaLocations)
             {
@@ -41,9 +41,9 @@ namespace AdventOfCode2024.Days
             return antinodeLocations.Count;
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            ReadInput();
+            await ReadInput();
             var antinodeLocations = new HashSet<(int, int)>();
             foreach (var antenna in _antennaLocations)
             {
@@ -77,9 +77,9 @@ namespace AdventOfCode2024.Days
             return antinodeLocations.Count;
         }
 
-        private void ReadInput()
+        private async Task ReadInput()
         {
-            var input = ReadFileUtils.ReadFile(8);
+            var input = await ReadFileUtils.ReadFileAsync(8);
             _antennaLocations = new Dictionary<char, List<(int, int)>>();
             _maxX = input[0].Length;
             _maxY = input.Count;

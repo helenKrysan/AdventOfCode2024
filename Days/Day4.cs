@@ -5,9 +5,9 @@ namespace AdventOfCode2024.Days
     internal class Day4 : IDay<int>
     {
         private List<List<char>> XMASchars = [];
-        public int SolvePart1()
+        public async Task<int> SolvePart1Async()
         {
-            var input = ReadFileUtils.ReadFile(4);
+            var input = await ReadFileUtils.ReadFileAsync(4);
             XMASchars = [];
             foreach (var line in input)
             {
@@ -157,9 +157,9 @@ namespace AdventOfCode2024.Days
             return false;
         }
 
-        public int SolvePart2()
+        public async Task<int> SolvePart2Async()
         {
-            var input = ReadFileUtils.ReadFile(4);
+            var input = await ReadFileUtils.ReadFileAsync(4);
             XMASchars = [];
             foreach (var line in input)
             {

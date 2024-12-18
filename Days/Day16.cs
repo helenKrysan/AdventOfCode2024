@@ -290,10 +290,10 @@ namespace AdventOfCode2024.Days
                     _end = _map.Last()[index];
                 }
             }
-            FillGraph(startX, startY);
+            FillGraph();
         }
 
-        private void FillGraph(int x, int y)
+        private void FillGraph()
         {
             for (int i = 0; i < _map.Count; i++)
             {

@@ -50,7 +50,7 @@ namespace AdventOfCode2024.Days
             {
                 if (IsMatch(design))
                 {
-                    sum += AllMatch(design, 0L);
+                    sum += AllMatchOld(design, 0L);
                 }
             }
             return sum;
@@ -77,6 +77,31 @@ namespace AdventOfCode2024.Days
             if (matches > 0)
             {
                 _cache.Add(design, matches);
+            }
+            return matches;
+        }
+
+        private long AllMatchOld(string design, long matches)
+        {           
+            if (string.IsNullOrWhiteSpace(design))
+            {
+                return matches + 1;
+            }
+            foreach (var towel in _towels)
+            {
+                if (design.StartsWith(towel))
+                {
+                    var rest = design.Substring(towel.Length);
+                    if (_cache.ContainsKey(rest))
+                    {
+                        matches += _cache[rest];
+                    }
+                    else
+                    {
+                        matches = AllMatchOld(rest, matches);
+                        _cache.Add(rest, matches);
+                    }
+                }
             }
             return matches;
         }

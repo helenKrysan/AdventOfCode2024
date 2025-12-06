@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2025.Days;
 
-var day = new Day5();
+var day = new Day6();
 var resultPart1 = await day.SolvePart1Async();
 Console.WriteLine(resultPart1);
 
